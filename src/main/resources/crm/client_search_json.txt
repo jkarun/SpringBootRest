@@ -1,0 +1,197 @@
+{
+  "data": [
+    {
+      "clients": [
+        {
+          "id": "AAHV6ZSFF030CLTCTCN3",
+          "sourceSystemType": null,
+          "sourceSystemTypeCode": "IN",
+          "name": "LYNETTE BABER",
+          "personName": {
+            "firstName": "LYNETTE",
+            "middleName": "H",
+            "lastName": "BABER",
+            "titlePrefix": "Dr.",
+            "nameSuffix": "III"
+          },
+          "phoneNumbers": [
+            {
+              "phoneNumber": "+1-555-5806550+",
+              "phoneType": "HH",
+              "phoneTypeCode": null
+            },
+            {
+              "phoneNumber": "9876543210",
+              "phoneType": "Alternate",
+              "phoneTypeCode": "string"
+            }
+          ],
+          "emailAddresses": [
+            {
+              "emailAddress": "jp.hilgenholdinfarmbureaucom@example.com",
+              "emailAddressType": "OAM"
+            },
+            {
+              "emailAddress": "jppampscinet@example.com",
+              "emailAddressType": "OTH"
+            }
+          ],
+          "taxId": "833-40-6927",
+          "addresses": [
+            {
+              "addressId": "UFhQSVQ0UEZGMDMwQ0xUQVRDTjF8SEhBfDF8MTk5MC0wMS0wMQ",
+              "correlationId": "UFhQSVQ0UEZGMDMwQ0xUQVRDTjE",
+              "addressType": "HHA",
+              "addressTypeDescription": "Account",
+              "effectiveDate": "1990-01-01",
+              "expirationDate": "9999-12-31",
+              "associatedObject": "string",
+              "addressStatus": "Active",
+              "addressValidationCode": "V",
+              "addressAggregate": "string",
+              "street1": "7987 Abbott Rd",
+              "street2": "",
+              "city": "Tell City",
+              "state": "IN",
+              "countyCode": "62",
+              "county": "string",
+              "townshipCode": "01",
+              "township": "string",
+              "postalCode": "47586-9013",
+              "country": "USA"
+            }
+          ],
+          "preferences": [
+            {
+              "preference": "Billing Alert",
+              "preferenceCode": "OAMAB",
+              "enabled": false
+            },
+            {
+              "preference": "Marketing Email",
+              "preferenceCode": "OAMME",
+              "enabled": false
+            },
+            {
+              "preference": "Paper Policy Documents",
+              "preferenceCode": "OAMPD",
+              "enabled": false
+            },
+            {
+              "preference": "Product Email",
+              "preferenceCode": "OAMPE",
+              "enabled": false
+            },
+            {
+              "preference": "Paper Invoice",
+              "preferenceCode": "OAMPI",
+              "enabled": false
+            }
+          ],
+          "demographics": {
+            "gender": "Male",
+            "genderCode": "M",
+            "dateOfBirth": "1966-07-12",
+            "maritalStatus": "Married",
+            "maritalStatusCode": "M",
+            "driversLicenseNumber": 5788690618,
+            "driversLicenseState": "IN",
+            "dateOfDeath": null
+          }
+        },
+        {
+          "id": "AAHV6ZSFF030CLTERCN1",
+          "sourceSystemType": null,
+          "sourceSystemTypeCode": "IN",
+          "name": "BERNICE ARCHULETA",
+          "personName": {
+            "firstName": "BERNICE",
+            "middleName": "R",
+            "lastName": "ARCHULETA",
+            "titlePrefix": "Mrs.",
+            "nameSuffix": "II"
+          },
+          "phoneNumbers": [
+            {
+              "phoneNumber": "+1-555-5987524+",
+              "phoneType": "HH",
+              "phoneTypeCode": null
+            },
+            {
+              "phoneNumber": "9865741230",
+              "phoneType": "Alternate",
+              "phoneTypeCode": "string"
+            }
+          ],
+          "emailAddresses": [
+            {
+              "emailAddress": "bernice.archeleta@gmail.com",
+              "emailAddressType": "OAM"
+            },
+            {
+              "emailAddress": "bernice@hotmail.com",
+              "emailAddressType": "OTH"
+            }
+          ],
+          "taxId": "987-41-9875",
+          "addresses": [
+            {
+              "addressId": "UFhQSVQERTZGMDMwQ0xUOUYDTjF7KJHBfDF8MTk5MC0wTR0wER",
+              "correlationId": "UFhQSVQ0UIOMDMwQ0rUQVRDTjE",
+              "addressType": "INHL",
+              "addressTypeDescription": "Individual Location",
+              "effectiveDate": "2010-09-11",
+              "expirationDate": "9999-12-31",
+              "associatedObject": "string",
+              "addressStatus": "Active",
+              "addressValidationCode": "V",
+              "addressAggregate": "string",
+              "street1": "56 Seventh Cross Rd",
+              "street2": "",
+              "city": "Ohio City",
+              "state": "IN",
+              "countyCode": "62",
+              "county": "string",
+              "townshipCode": "01",
+              "township": "string",
+              "postalCode": "47586-9013",
+              "country": "USA"
+            }
+          ],
+          "preferences": [
+            {
+              "preference": "Billing Alert",
+              "preferenceCode": "OAMAB",
+              "enabled": false
+            },
+            {
+              "preference": "Marketing Email",
+              "preferenceCode": "OAMME",
+              "enabled": false
+            },
+            {
+              "preference": "Paper Policy Documents",
+              "preferenceCode": "OAMPD",
+              "enabled": false
+            },
+            {
+              "preference": "Product Email",
+              "preferenceCode": "OAMPE",
+              "enabled": false
+            }
+          ],
+          "demographics": {
+            "gender": "Female",
+            "genderCode": "F",
+            "dateOfBirth": "1976-01-15",
+            "maritalStatus": "Married",
+            "maritalStatusCode": "M",
+            "driversLicenseNumber": 9876542143,
+            "driversLicenseState": "IN",
+            "dateOfDeath": null
+          }
+        }
+      ]
+    }
+  ]
+}

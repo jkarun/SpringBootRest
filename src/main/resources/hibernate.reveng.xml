@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<!-- <type-mapping> <sql-type jdbc-type="CLOB" hibernate-type="String"></sql-type> 
+		<sql-type jdbc-type="BLOB" hibernate-type="byte[]"></sql-type> </type-mapping> -->
+
+	<!-- life_eapp DB tables -->
+	<!-- use SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' query to list out all tables --> 
+	
+	<!-- To Generate POJOs 
+		mvn hibernate3:hbm2hbmxml => to generate xml mapping file
+	  	mvn hibernate3:hbm2java => to gnereate java annotation file 
+	-->
+	
+	<!-- comment if you already generated the files or comment out if you want to regenerate -->
+	
+	<!-- tables -->
+	
+	<table-filter match-name="picf_notes"></table-filter>
+	<table-filter match-name="picf_metrics_event"></table-filter>
+	<table-filter match-name="picf_audit"></table-filter>
+	<table-filter match-name="release_details_t"></table-filter>
+	<table-filter match-name="picf_resource_roles"></table-filter>
+	<table-filter match-name="cloning_partyscreen_details"></table-filter>
+	<table-filter match-name="picf_group_members"></table-filter>
+	<table-filter match-name="picf_masking_types"></table-filter>
+	<table-filter match-name="picf_entity_definition"></table-filter>
+	<table-filter match-name="picf_resource_actions"></table-filter>
+	<table-filter match-name="picf_term_source"></table-filter>
+	<table-filter match-name="picf_logo"></table-filter>
+	<table-filter match-name="picf_dynamic_entity_types"></table-filter>
+	<table-filter match-name="picf_query_lookup"></table-filter>
+	<table-filter match-name="rider"></table-filter>
+	<table-filter match-name="picf_job_detail"></table-filter>
+	<table-filter match-name="app_case_plan_specific_fields"></table-filter>
+	<table-filter match-name="picf_decision_chart"></table-filter>
+	<table-filter match-name="revocable"></table-filter>
+	<table-filter match-name="picf_hierarchy_type"></table-filter>
+	<table-filter match-name="app_case_exchange"></table-filter>
+	<table-filter match-name="case_coverage"></table-filter>
+	<table-filter match-name="benefit"></table-filter>
+	<table-filter match-name="picf_query_details"></table-filter>
+	<table-filter match-name="case_view_status"></table-filter>
+	<table-filter match-name="picf_dashboard"></table-filter>
+	<table-filter match-name="case_question_resource_map"></table-filter>
+	<table-filter match-name="picf_operations"></table-filter>
+	<table-filter match-name="case_alt_premium_mode"></table-filter>
+	<table-filter match-name="picf_notes_configuration"></table-filter>
+	<table-filter match-name="case_agent"></table-filter>
+	<table-filter match-name="picf_communication_template"></table-filter>
+	<table-filter match-name="case_esign"></table-filter>
+	<table-filter match-name="picf_resource"></table-filter>
+	<table-filter match-name="case_client_map"></table-filter>
+	<table-filter match-name="picf_attribute_set"></table-filter>
+	<table-filter match-name="eapp_form_template_map"></table-filter>
+	<table-filter match-name="picf_question_values"></table-filter>
+	<table-filter match-name="eapp_form_template_criteria"></table-filter>
+	<table-filter match-name="dyna_ui_elements"></table-filter>
+	<table-filter match-name="picf_question_nameSpace"></table-filter>
+	<table-filter match-name="eapp_form_template"></table-filter>
+	<table-filter match-name="client_eft_fin_inst_details"></table-filter>
+	<table-filter match-name="eapp_case_role_map"></table-filter>
+	<table-filter match-name="picf_as_entity_mapping"></table-filter>
+	<table-filter match-name="picf_question"></table-filter>
+	<table-filter match-name="eapp_case_role"></table-filter>
+	<table-filter match-name="eapp_bene_category_map"></table-filter>
+	<table-filter match-name="picf_attribute"></table-filter>
+	<table-filter match-name="picf_role"></table-filter>
+	<table-filter match-name="dyna_ui_screen"></table-filter>
+	<table-filter match-name="picf_attachment"></table-filter>
+	<table-filter match-name="thunderhead_question_map"></table-filter>
+	<table-filter match-name="picf_communication"></table-filter>
+	<table-filter match-name="picf_term"></table-filter>
+	<table-filter match-name="pdf_uw"></table-filter>
+	<table-filter match-name="agent_t"></table-filter>
+	<table-filter match-name="picf_column_metadata"></table-filter>
+	<table-filter match-name="picf_tenant_theme"></table-filter>
+	<table-filter match-name="payor_type"></table-filter>
+	<table-filter match-name="agent_association_t"></table-filter>
+	<table-filter match-name="payor_category"></table-filter>
+	<table-filter match-name="picf_group"></table-filter>
+	<table-filter match-name="picf_tenant"></table-filter>
+	<table-filter match-name="owner_type"></table-filter>
+	<table-filter match-name="properties_map"></table-filter>
+	<table-filter match-name="agent_phone_t"></table-filter>
+	<table-filter match-name="owner_category"></table-filter>
+	<table-filter match-name="si_property"></table-filter>
+	<table-filter match-name="picf_form_template"></table-filter>
+	<table-filter match-name="picf_sequencer"></table-filter>
+	<table-filter match-name="occupation"></table-filter>
+	<table-filter match-name="portal"></table-filter>
+	<table-filter match-name="nicotine_type"></table-filter>
+	<table-filter match-name="plan_spec_fields"></table-filter>
+	<table-filter match-name="name_prefix"></table-filter>
+	<table-filter match-name="picf_form_cntxt_mapping"></table-filter>
+	<table-filter match-name="plan_rate_class"></table-filter>
+	<table-filter match-name="line_of_business"></table-filter>
+	<table-filter match-name="level_year"></table-filter>
+	<table-filter match-name="picf_form_audit"></table-filter>
+	<table-filter match-name="plan_coverage"></table-filter>
+	<table-filter match-name="ldap_user_auth"></table-filter>
+	<table-filter match-name="picf_workspace"></table-filter>
+	<table-filter match-name="financial_institution_unique_identifier"></table-filter>
+	<table-filter match-name="picf_form_attachment"></table-filter>
+	<table-filter match-name="financial_institution_type"></table-filter>
+	<table-filter match-name="picf_user_theme"></table-filter>
+	<table-filter match-name="financial_account_type"></table-filter>
+	<table-filter match-name="picf_attrkvpair"></table-filter>
+	<table-filter match-name="estate_type"></table-filter>
+	<table-filter match-name="picf_user"></table-filter>
+	<table-filter match-name="esign_status"></table-filter>
+	<table-filter match-name="picf_attribute_value"></table-filter>
+	<table-filter match-name="Employee1"></table-filter>
+	<table-filter match-name="eft_draft_time"></table-filter>
+	<table-filter match-name="Emp99"></table-filter>
+	<table-filter match-name="picf_theme"></table-filter>
+	<table-filter match-name="picf_communication_form"></table-filter>
+	<table-filter match-name="app_case"></table-filter>
+	<table-filter match-name="Employee"></table-filter>
+	<table-filter match-name="EMP_TBL"></table-filter>
+	<table-filter match-name="dividend_option_type"></table-filter>
+	<table-filter match-name="picf_term_type"></table-filter>
+	<table-filter match-name="picf_acrofields"></table-filter>
+	<table-filter match-name="death_benefit_option"></table-filter>
+	<table-filter match-name="contact_type"></table-filter>
+	<table-filter match-name="relationship_typ"></table-filter>
+	<table-filter match-name="dyna_ui_mapping"></table-filter>
+	<table-filter match-name="company"></table-filter>
+	<table-filter match-name="property"></table-filter>
+	<table-filter match-name="client_unique_id_type"></table-filter>
+	<table-filter match-name="case_client_inforce_details"></table-filter>
+	<table-filter match-name="product_combination"></table-filter>
+	<table-filter match-name="usertable"></table-filter>
+	<table-filter match-name="client_details"></table-filter>
+	<table-filter match-name="case_client_flatextra"></table-filter>
+	<table-filter match-name="business_mode"></table-filter>
+	<table-filter match-name="case_client_estate_planning"></table-filter>
+	<table-filter match-name="Visa_Type"></table-filter>
+	<table-filter match-name="billing_mode_type"></table-filter>
+	<table-filter match-name="case_client_employment_details"></table-filter>
+	<table-filter match-name="unemployment_status"></table-filter>
+	<table-filter match-name="companytable"></table-filter>
+	<table-filter match-name="billing_form_type"></table-filter>
+	<table-filter match-name="case_client_driving_info"></table-filter>
+	<table-filter match-name="state"></table-filter>
+	<table-filter match-name="bene_typ"></table-filter>
+	<table-filter match-name="case_client_coverage"></table-filter>
+	<table-filter match-name="stakeholder_type_map"></table-filter>
+	<table-filter match-name="combtwo"></table-filter>
+	<table-filter match-name="bene_category"></table-filter>
+	<table-filter match-name="case_client_contact_details"></table-filter>
+	<table-filter match-name="picf_event_types"></table-filter>
+	<table-filter match-name="bene_assignment_type"></table-filter>
+	<table-filter match-name="case_client_citizenship_details"></table-filter>
+	<table-filter match-name="base_products_limits"></table-filter>
+	<table-filter match-name="case_client_address_details"></table-filter>
+	<table-filter match-name="portalproperties"></table-filter>
+	<table-filter match-name="base_products"></table-filter>
+	<table-filter match-name="case_beneficiary_stakeholder_map"></table-filter>
+	<table-filter match-name="questionnaire_associate_info"></table-filter>
+	<table-filter match-name="base_plans"></table-filter>
+	<table-filter match-name="client_eft_fin_inst_map"></table-filter>
+	<table-filter match-name="picf_trigger_detail"></table-filter>
+	<table-filter match-name="appln_case_type"></table-filter>
+	<table-filter match-name="case_coverage_details"></table-filter>
+	<table-filter match-name="household_t"></table-filter>
+	<table-filter match-name="case_premium_mode"></table-filter>
+	<table-filter match-name="picf_metrics_req_time"></table-filter>
+	<table-filter match-name="case_insure_nicotine_usage"></table-filter>
+	<table-filter match-name="picf_role_permissions"></table-filter>
+	<table-filter match-name="sysdiagrams"></table-filter>
+	<table-filter match-name="case_client_replacing_inforce_policy_details"></table-filter>
+	<table-filter match-name="picf_metrics_req_counter"></table-filter>
+	<table-filter match-name="picf_form_cntxt_definition"></table-filter>
+	<table-filter match-name="rider_types"></table-filter>
+	<table-filter match-name="case_client_question_response"></table-filter>
+	<table-filter match-name="picf_response_options"></table-filter> 
+	
+	
+	<!-- views -->
+	<table-filter match-name="AGENT_INBOX_VIEW"></table-filter>
+	
+
+</hibernate-reverse-engineering>
