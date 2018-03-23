@@ -17,6 +17,7 @@
 	
 	<!-- tables -->
 	
+	<!-- 
 	<table-filter match-name="picf_notes"></table-filter>
 	<table-filter match-name="picf_metrics_event"></table-filter>
 	<table-filter match-name="picf_audit"></table-filter>
@@ -176,10 +177,12 @@
 	<table-filter match-name="rider_types"></table-filter>
 	<table-filter match-name="case_client_question_response"></table-filter>
 	<table-filter match-name="picf_response_options"></table-filter> 
-	
+ -->	
 	
 	<!-- views -->
-	<table-filter match-name="AGENT_INBOX_VIEW"></table-filter>
+	<!-- 
+	<table-filter match-name="AGENT_INBOX_VIEW"></table-filter> 
+	-->
 	
 
 </hibernate-reverse-engineering>

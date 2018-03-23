@@ -1,8 +1,11 @@
 package com.ebix.ifbieapp.controller;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ebix.ifbieapp.model.User;
+import com.ebix.ifbieapp.repository.PicfUserRepository;
 
 @CrossOrigin()
 @ControllerAdvice
@@ -22,6 +26,10 @@ import com.ebix.ifbieapp.model.User;
 @ResponseBody
 public class UserController {
 
+	@Autowired
+	@Qualifier("picfUserRepository")
+	PicfUserRepository picfUserRepository;
+	
 	private List<User> users = new ArrayList();
 
 	UserController() {
@@ -31,6 +39,7 @@ public class UserController {
 //	@RequestMapping(method = RequestMethod.GET)
 	@GetMapping()
 	public List<User> getUsers() {
+		picfUserRepository.findOne(new BigDecimal(52));
 		return this.users;
 	}
 
