@@ -235,7 +235,7 @@ public class AgentInboxViewId implements java.io.Serializable {
 		this.lstUpdtUserId = lstUpdtUserId;
 	}
 
-	@Column(name = "CASE_STATUS", nullable = false, length = 20)
+	@Column(name = "CASE_STATUS", nullable = true, length = 20)
 	public String getCaseStatus() {
 		return this.caseStatus;
 	}

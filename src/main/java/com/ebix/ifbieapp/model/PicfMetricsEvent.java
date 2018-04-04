@@ -49,7 +49,7 @@ public class PicfMetricsEvent implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Version
+//	@Version
 	@Column(name = "timestamp", nullable = false, scale = 0)
 	public BigDecimal getTimestamp() {
 		return this.timestamp;

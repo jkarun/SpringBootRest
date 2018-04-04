@@ -25,10 +25,6 @@ import com.ebix.ifbieapp.repository.PicfUserRepository;
 @RequestMapping(value = "/users")
 @ResponseBody
 public class UserController {
-
-	@Autowired
-	@Qualifier("picfUserRepository")
-	PicfUserRepository picfUserRepository;
 	
 	private List<User> users = new ArrayList();
 
@@ -39,7 +35,6 @@ public class UserController {
 //	@RequestMapping(method = RequestMethod.GET)
 	@GetMapping()
 	public List<User> getUsers() {
-		picfUserRepository.findOne(new BigDecimal(52));
 		return this.users;
 	}
 

@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @Entity
 @Table(name = "sysdiagrams"
-
 		, uniqueConstraints = @UniqueConstraint(columnNames = { "principal_id", "name" }))
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -61,7 +60,7 @@ public class Sysdiagrams implements java.io.Serializable {
 		this.diagramId = diagramId;
 	}
 
-	@Version
+//	@Version
 	@Column(name = "version")
 	public Integer getVersion() {
 		return this.version;

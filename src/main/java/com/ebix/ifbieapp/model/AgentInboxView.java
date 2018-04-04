@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -20,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "AGENT_INBOX_VIEW")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NamedNativeQuery(name="AgentInboxViewNativeQuery",query="select * from agent_inbox_view where lst_updt_user_id=:lstUpdtUserId") 
 public class AgentInboxView implements java.io.Serializable {
 
 	private AgentInboxViewId id;
@@ -51,7 +54,7 @@ public class AgentInboxView implements java.io.Serializable {
 			@AttributeOverride(name = "companyCode", column = @Column(name = "COMPANY_CODE", length = 8)),
 			@AttributeOverride(name = "companyName", column = @Column(name = "COMPANY_NAME", length = 100)),
 			@AttributeOverride(name = "lstUpdtUserId", column = @Column(name = "LST_UPDT_USER_ID", length = 50)),
-			@AttributeOverride(name = "caseStatus", column = @Column(name = "CASE_STATUS", nullable = false, length = 20)) })
+			@AttributeOverride(name = "caseStatus", column = @Column(name = "CASE_STATUS", nullable = true, length = 20)) })
 	public AgentInboxViewId getId() {
 		return this.id;
 	}
