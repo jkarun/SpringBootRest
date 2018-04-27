@@ -183,6 +183,6 @@
 	<!-- 
 	<table-filter match-name="AGENT_INBOX_VIEW"></table-filter> 
 	-->
-	
+	<table-filter match-name="user"></table-filter> 
 
 </hibernate-reverse-engineering>
