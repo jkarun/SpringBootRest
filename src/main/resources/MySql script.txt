@@ -1,0 +1,7 @@
+Angular Spring rest crud app MySql script
+
+create database springrest;
+create table user (id int auto_increment,fname varchar(50),lname varchar(50),email varchar(50),pwd varchar(50),primary key (id));
+insert into user values (1,'arun','prasath','test@email.com','test');
+insert into user values (null,'nura','jk','test@email.com','test');
+select * from user;

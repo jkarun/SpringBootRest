@@ -1,11 +1,9 @@
 package com.ebix.ifbieapp.controller;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,16 +13,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ebix.ifbieapp.model.User;
-import com.ebix.ifbieapp.repository.PicfUserRepository;
+import com.ebix.ifbieapp.repository.UserDAO;
 
 @CrossOrigin()
 @ControllerAdvice
 @RequestMapping(value = "/users")
 @ResponseBody
 public class UserController {
+	
+	@Autowired
+	UserDAO userDao;
 	
 	private List<User> users = new ArrayList();
 
@@ -35,19 +37,24 @@ public class UserController {
 //	@RequestMapping(method = RequestMethod.GET)
 	@GetMapping()
 	public List<User> getUsers() {
-		return this.users;
+		return userDao.findAll();
+//		return this.users;
 	}
 
 //	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@GetMapping("/{id}")
-	public User getUser(@PathVariable("id") Long id) {
-		return this.users.stream().filter(user -> user.getId() == id).findFirst().orElse(null);
+	public User getUser(@RequestParam("id") Integer id) {
+		return userDao.getOne(id);
+//		return this.users.stream().filter(user -> user.getId() == id).findFirst().orElse(null);
 	}
 
 //	@RequestMapping(method = RequestMethod.POST)
 	@PostMapping
 	public User saveUser(@RequestBody User user) {
-		Long nextId = 0L;
+		
+		userDao.save(user);
+		
+		/*Long nextId = 0L;
 		if (this.users.size() != 0) {
 			User lastUser = this.users.stream().skip(this.users.size() - 1).findFirst().orElse(null);
 			nextId = lastUser.getId() + 1;
@@ -55,6 +62,7 @@ public class UserController {
 
 		user.setId(nextId);
 		this.users.add(user);
+*/		
 		return user;
 
 	}
@@ -63,8 +71,8 @@ public class UserController {
 	@PutMapping
 	public User updateUser(@RequestBody User user) {
 		User modifiedUser = this.users.stream().filter(u -> u.getId() == user.getId()).findFirst().orElse(null);
-		modifiedUser.setFirstName(user.getFirstName());
-		modifiedUser.setLastName(user.getLastName());
+		modifiedUser.setFname(user.getFname());
+		modifiedUser.setLname(user.getLname());
 		modifiedUser.setEmail(user.getEmail());
 		return modifiedUser;
 	}
@@ -72,24 +80,25 @@ public class UserController {
 //	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@DeleteMapping
 	public boolean deleteUser(@PathVariable Long id) {
-		User deleteUser = this.users.stream().filter(user -> user.getId() == id).findFirst().orElse(null);
+		/*User deleteUser = this.users.stream().filter(user -> user.getId() == id).findFirst().orElse(null);
 		if (deleteUser != null) {
 			this.users.remove(deleteUser);
 			return true;
 		} else {
 			return false;
-		}
+		}*/
+		return false;
 
 	}
 
 	List<User> buildUsers() {
 		List<User> users = new ArrayList<>();
 
-		User user1 = buildUser(1L, "John", "Doe", "john@email.com");
-		User user2 = buildUser(2L, "Jon", "Smith", "smith@email.com");
-		User user3 = buildUser(3L, "Will", "Craig", "will@email.com");
-		User user4 = buildUser(4L, "Sam", "Lernorad", "sam@email.com");
-		User user5 = buildUser(5L, "Ross", "Doe", "ross@email.com");
+		User user1 = buildUser(1, "John", "Doe", "john@email.com");
+		User user2 = buildUser(2, "Jon", "Smith", "smith@email.com");
+		User user3 = buildUser(3, "Will", "Craig", "will@email.com");
+		User user4 = buildUser(4, "Sam", "Lernorad", "sam@email.com");
+		User user5 = buildUser(5, "Ross", "Doe", "ross@email.com");
 
 		users.add(user1);
 		users.add(user2);
@@ -101,11 +110,11 @@ public class UserController {
 
 	}
 
-	User buildUser(Long id, String fname, String lname, String email) {
+	User buildUser(int id, String fname, String lname, String email) {
 		User user = new User();
 		user.setId(id);
-		user.setFirstName(fname);
-		user.setLastName(lname);
+		user.setFname(fname);
+		user.setLname(lname);
 		user.setEmail(email);
 		return user;
 	}
